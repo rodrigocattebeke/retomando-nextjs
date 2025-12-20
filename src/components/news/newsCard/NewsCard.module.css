@@ -1,0 +1,39 @@
+.newsBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.newsCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 24rem;
+  gap: 0.6rem;
+}
+
+.newsImgContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.newsImgContainer img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.newsTitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.newsTitle h2 {
+  font-size: 1.1rem;
+}
