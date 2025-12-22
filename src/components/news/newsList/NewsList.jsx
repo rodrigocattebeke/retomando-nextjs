@@ -1,4 +1,4 @@
-import { NewsCard } from "../newsCard/NewsCard";
+import { NewsCard } from "@/components/news/newsCard/NewsCard";
 import styles from "./NewsList.module.css";
 
 export const NewsList = ({ title, news }) => {

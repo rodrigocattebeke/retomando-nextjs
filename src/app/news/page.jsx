@@ -1,5 +1,6 @@
 import { NewsList } from "@/components/news/newsList/NewsList";
 import { getLatestsNews } from "@/services/news/getLatestsNews";
+import { notFound } from "next/navigation";
 import React from "react";
 
 export const metadata = {
@@ -9,6 +10,7 @@ export const metadata = {
 
 export default async function News() {
   const news = await getLatestsNews();
+  if (!news) return notFound();
   return (
     <div>
       <h1>Portal de noticias</h1>

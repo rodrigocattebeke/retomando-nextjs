@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <header>
         <nav>
-          <Link href="/news">links de nav</Link>
+          <Link href="/news">ir a noticias</Link>
         </nav>
       </header>
       <main>
