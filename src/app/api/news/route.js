@@ -9,16 +9,14 @@ export async function GET(request) {
     const { searchParams } = new URL(request.url);
 
     const id = searchParams.get("id");
-    const page = Number(searchParams.get("page")) || 1;
+    const page = Number(searchParams.get("page"));
 
-    let url;
+    let url = TRANSFORMED_URL;
 
     // 🔹 Noticia individual
     if (id) {
       url = `${BASE_URL}&id=${id}`;
-    }
-    // 🔹 Listado paginado
-    else {
+    } else if (page) {
       url = `${TRANSFORMED_URL}&page=${page}`;
     }
 
