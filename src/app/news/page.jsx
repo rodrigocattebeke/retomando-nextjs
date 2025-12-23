@@ -14,7 +14,7 @@ export default async function News() {
   return (
     <div>
       <h1>Portal de noticias</h1>
-      <NewsList title="Lo Último" news={news.results} />
+      <NewsList title="Lo Último" initialNews={news.results} nextPage={news.nextPage} />
     </div>
   );
 }
