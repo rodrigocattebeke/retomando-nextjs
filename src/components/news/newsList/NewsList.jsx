@@ -29,7 +29,7 @@ export const NewsList = ({ title, initialNews, nextPage }) => {
       <h3>{title}</h3>
       <div className={styles.sectionGridContainer} aria-busy={loading}>
         {news.map((n) => (
-          <NewsCard title={n.title} imageURL={n.image_url} category={n.category[0]} key={n.article_id} />
+          <NewsCard title={n.title} imageURL={n.image_url} category={n.category[0]} newsId={n.article_id} key={n.article_id} />
         ))}
       </div>
       {nxtPage && (

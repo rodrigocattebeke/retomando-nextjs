@@ -1,8 +1,11 @@
 import { getSingleNews } from "@/services/news/getSingleNews";
 import React from "react";
 
-export async function generateMetadata() {
-  const news = await getSingleNews();
+export async function generateMetadata({ searchParams }) {
+  const { id } = await searchParams;
+  const { results } = await getSingleNews(id);
+
+  const news = results[0];
 
   return {
     title: news.title,
@@ -23,9 +26,10 @@ export async function generateMetadata() {
   };
 }
 
-export default async function News({ params }) {
-  const news = await getSingleNews();
-  console.log(news);
+export default async function News({ searchParams }) {
+  const { id } = await searchParams;
+  const { results } = await getSingleNews(id);
+  const news = results[0];
   return (
     <div>
       <h1>Noticia</h1>
