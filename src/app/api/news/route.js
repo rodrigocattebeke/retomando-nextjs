@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
-const TRANSFORMED_URL = "https://newsdata.io/api/1/latest? apikey=pub_9378aab4ec2a4f30ad41fb7396561b12&country=py,ar,us,br,cl&language=es&image=1";
+const TRANSFORMED_URL = "https://newsdata.io/api/1/latest?apikey=pub_9378aab4ec2a4f30ad41fb7396561b12&country=py,ar,us,br,cl&language=es&image=1";
 
-const BASE_URL = "https://newsdata.io/api/1/latest? apikey=pub_9378aab4ec2a4f30ad41fb7396561b12";
+const BASE_URL = "https://newsdata.io/api/1/latest?apikey=pub_9378aab4ec2a4f30ad41fb7396561b12";
 
 export async function GET(request) {
   try {
@@ -10,7 +10,7 @@ export async function GET(request) {
 
     const id = searchParams.get("id");
     const page = Number(searchParams.get("page"));
-
+    console.log(searchParams);
     let url = TRANSFORMED_URL;
 
     // 🔹 Noticia individual
